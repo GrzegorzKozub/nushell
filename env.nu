@@ -32,11 +32,10 @@ $env.TRANSIENT_PROMPT_COMMAND_RIGHT = ""
 
 def prompt-indicator [color: string = "blue"] {
   let color = if ($env.LAST_EXIT_CODE != 0) { ansi red } else { ansi $color }
-  $"($color)●• (ansi reset)"
+  $"($color)❯ (ansi reset)"
 }
 
 $env.PROMPT_INDICATOR_VI_INSERT = {|| prompt-indicator }
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| prompt-indicator "white" }
 
-$env.PROMPT_MULTILINE_INDICATOR = {|| "   " }
-
+$env.PROMPT_MULTILINE_INDICATOR = {|| "  " }
