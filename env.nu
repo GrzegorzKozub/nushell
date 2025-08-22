@@ -1,12 +1,12 @@
 #!/usr/bin/env nu
 
 def left-prompt [] {
-  let dir = match (do --ignore-shell-errors { $env.PWD | path relative-to $nu.home-path }) {
+  let dir = match (do { $env.PWD | path relative-to $nu.home-path }) {
     null => $env.PWD
     "" => "~"
     $relative_pwd => ([~ $relative_pwd] | path join)
   }
-  $"(ansi cyan)($dir)(ansi reset)\n\n"
+  $"(ansi cyan)($dir)(ansi reset)\n"
 }
 
 def right-prompt [] {

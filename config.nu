@@ -72,7 +72,6 @@ $env.config = {
     trim: { methodology: wrapping truncating_suffix: "…" }
   }
   completions: { algorithm: prefix } # fuzzy is weird
-  filesize: { metric: true }
   cursor_shape: { vi_insert: line vi_normal: block }
   color_config: $gruvbox_material_dark
   footer_mode: 32
